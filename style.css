@@ -182,11 +182,15 @@ header ul, footer ul {
 
 
 /* main content stuff, unanimous across sites */
+.main-spacer {
+    width: 200px;
+    visibility: hidden;
+}
 main {
     min-height: calc(100vh - 100px);
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
+    justify-content: space-around;
     gap: 20px;
     font-family: Arial, sans-serif;
 }
@@ -273,6 +277,8 @@ main img:not(.about-author img) {
     height: 275px;
     display: flex;
     flex-direction: column;
+    border-radius: 7px;
+    position: relative;
 }
 .searchbox h1 {
     margin: 0;
@@ -327,6 +333,37 @@ main img:not(.about-author img) {
 }
 .molly-container:hover .molly-overlay {
     opacity: 1;
+}
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.searchbox::after, .searchbox::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 7px;
+    background-image: conic-gradient(from var(--angle), blue, lightblue, #FF999C, red, yellow, blue);
+    animation: 3s spin linear infinite;
+}
+.searchbox::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
 }
 
 
@@ -399,6 +436,7 @@ main img:not(.about-author img) {
     align-items: center;
     gap: 10px;
     flex: 0.45;
+    width: auto;
 }
 .back-to-top {  
     border: 1px solid blue;
@@ -455,6 +493,12 @@ footer p, footer ul {
     .endpage {
         height: 100px;
     }
+    .spacer {
+        display: none;
+    }
+    .back-to-top-wrapper {
+        margin-right: 20px;
+    }
     main {
         flex-direction: column;
         align-items: center;
@@ -479,6 +523,9 @@ footer p, footer ul {
     .index-article-searchbox {
         flex-direction: column;
         width: auto;
+    }
+    .searchbox {
+        margin-left: 75px;
     }
 
 }
@@ -572,6 +619,7 @@ footer p, footer ul {
     flex-direction: column;
     justify-content: center;
     margin: 20px auto;
+    margin-left: 6%;
     
 }
 .author-pic-links {
