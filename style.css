@@ -1,659 +1,136 @@
-:root {
-    --background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url(pictures/background.jpg);
-    --base-color: white;
-    --base-variant: #e8e9ed;
-    --text-color: #111528;
-    --background-color: white;
-}
-.darkmode {
-    --background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(pictures/background.jpg);
-    --base-color: #070b1d;
-    --base-variant: #101425;
-    --text-color: #ffff;
-    --background-color: black;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+/* === Region body === */
 body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    position: relative;
-    background: var(--background);
+    background-image: url("/indexPictures/background3.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    transition: background 0.3s ease-in-out;
-} /* linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)) */
+    scroll-behavior: smooth;
+} /* endregion */
 
 
 
 
-
-
-/* dots above the header title, unanimous across sites */
-.dots {
-    max-height: 15px;
-}
-.dot {
-    width: 15px;
-    height: 15px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 50%;
-    display: inline-block;
-}
-/* header styling , unanimous across sites */
-header {
-    background-color: rgb(202, 201, 201);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 5px;
-    position: relative;
-}
-.h-title-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-basis: 20%; /* this pushes the content from the left by xx%? though it creates space on both sides */
-    text-align: center;
-}
-.h-title-left h1 a {
-    text-decoration: none;
-    color: transparent;
-}
-.h-title-left h1 a:hover {
-    text-decoration: underline; 
-    text-decoration-thickness: 1px; 
-    text-decoration-color: black; 
-    text-underline-offset: 2px;
-    
-}
-header h1 {
-    margin: 0px 0px 8px 0px;
-    background: linear-gradient(to right, blue, red, yellow); /* adds a gradient as background to the block around the text */
-    background-clip: text; /* limits the background to where there is only text */
-    color: transparent;  /* makes the text invisible so you only see the background, aka the background being the linear gradient */
-}
-.row {
-    display: flex;
-    list-style-type: none; /* this is for both the header UL and the footer UL */
-}
-header ul li, .row li { /* this is for both header UL and for the footer UL */
-    margin: 0 5px;
-}
-header ul, footer ul {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    right: 15px;
-    position: absolute;
-}
-
-/* header/footer social media stuff , unanimous across sites */
-.fa {
-    padding: 8px; 
-    width: 15px;   
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-    vertical-align: middle;
-}
-.fa:hover {
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1) inset, -2px -2px 2px white inset;
-}
-.fa-facebook {
-    color: white;
-    background: #3B5998;
-}
-.fa-twitter {
-    background: #55ACEE;
-    color: white;
-  }
-.fa-instagram {
-    color: white;
-    background: rgb(230, 230, 0);
-  }
-.fa-youtube {
-    color: white;
-    background: red;
-}
-
-
-/* text right below the header, + same styling for the thingy above footer , unanimous across sites */
-.oliverpage {
-    display: block;
-    text-align: center;
-    padding: 10px 0;
-}
-.oliverpage p {
-    margin: 2px;
-}
-.oliverpage p:first-child {
-    color: white;
-}
-.oliverpage, .endpage { /* just making sure the oliver page as well as the endpage 
-                            with tags has the same styling as each other */
-    background-color: rgb(119, 119, 119);
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-    font-family: cursive;
-}
-#theme-switch {
-    height: 50px;
-    width: 50px;
-    padding: 0;
-    border-radius: 50%;
-    background-color: var(--base-variant);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* === Region Nav === */
+nav {
+    width: 100vw;
+    height: 10vh;
     position: fixed;
-    top: 50%;
-    right: 20px;
-}
-#theme-switch span {
-    fill: var(--primary-color)
-}
-#theme-switch span:last-child {
-    display: none;
-}
-.darkmode #theme-switch span:first-child {
-    display: none;
-}
-.darkmode #theme-switch span:last-child {
-    display: block;
-}
-
-
-/* text right below the text below the header? And dark mode toggle , unanimous across sites*/
-.latest {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    text-align: center;
-    padding: 5px;
-    font-family: cursive;
-}
-
-
-
-/* main content stuff, unanimous across sites */
-.main-spacer {
-    width: 200px;
-    visibility: hidden;
-}
-main {
-    min-height: calc(100vh - 100px);
     display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
-    gap: 20px;
-    font-family: Arial, sans-serif;
+    background-color: white;
+    padding: 20px;
 }
-.index-article-searchbox {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    gap: 20px;
+nav h1 {
+    margin: 0;
 }
-.main-article { /* NOT NOT NOT unanimous across sites */
-    display: flex;
-    flex-direction: row;
-    width: 350px;
-    height: 275px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid black;
-    flex-grow: 0;
-    margin-right: auto;
-    color: var(--text-color);
-}
-.article-div {
-    display: flex;
-    flex-direction: column;
-}
-.article-div, .searchbox { /* styling for the div encompassing all articles */ 
-    background-color: rgba(255, 255, 255, 0.05); /* makes it white and 5% transparent */
-    backdrop-filter: blur(10px); /* backdrop-filter applies an effect to behind the element
-                                    so because it's transparent u see the blur, I think? */
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-main img:not(.about-author img) {
-    width: 200px;
-    height: 200px;
-    flex: 2;
-}
-.blog-box {
-    display: flex;
-    flex-direction: column;
-    flex: 2;
-}
-.blog-imgdesc {
-    display: flex;
-    flex-direction: row;
-}
-.blog-text {
-    display: flex;
-    flex-direction: column;
-    flex: 1.2;
-    height: 200px;
-}
-.blog-text p:first-child {
-    height: 180px;
-}
-.blog-text a {
+nav a {
     text-decoration: none;
+    color: black;
 }
-.blog-box h3, .blog-text p  { /*blogbox title as well as the blogbox read more button & text*/
-    margin: 0;
+nav a:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
-.blog-text-readm a {
-    color: blue;
-}
-.blog-text-readm a:hover {
-    font-size: 20px;
-    border-bottom: 1px solid blue
-}
-.title-user-posted { /* this is where both the "by Dejan & posted on:" are stored */
-    display: flex;
-    border-bottom: 1px solid black;
-    width: 60%;
-}
-.title-user-posted p:first-child {
-    width: 40%;
-}
-.title-user-posted p {
-    margin: 15px 0 0 0;
-}
-
-/*searchbox next to main , unanimous across sites */
-.searchbox {
-    width: 200px;
-    height: 275px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 7px;
-    position: relative;
-}
-.searchbox h1 {
-    margin: 0;
+.title-name {
     text-align: center;
-}
-.searchbox input[type=text] {
-    margin-top: 5px;
-    padding: 6px 0px;
-    border: none;
-    font-size: 14px;
-    background: rgba(255, 255, 255, 0.25);
-    width: 200px;
-    max-height: 20px;
-    align-self: flex-end;
-}
-.searchbox img {
-    width: 200px;
-    max-height: 200px;
-    object-fit: cover;
-    object-position: center;
-    
-}
-.molly-container {
-    position: relative;
-    width: 200px;
-    height: 200px;
-}
-.molly-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(pictures/molly.webp);
-    background-size: cover;
-    background-position: center; 
-}
-.molly-text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-.molly-container:hover .molly-overlay {
-    opacity: 1;
-}
-@property --angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-.searchbox::after, .searchbox::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
-    padding: 3px;
-    border-radius: 7px;
-    background-image: conic-gradient(from var(--angle), blue, lightblue, #FF999C, red, yellow, blue);
-    animation: 3s spin linear infinite;
-}
-.searchbox::before {
-    filter: blur(1.5rem);
-    opacity: 0.5;
-}
-@keyframes spin {
-    from {
-        --angle: 0deg;
-    }
-    to {
-        --angle: 360deg;
-    }
+    font-size: 1.8rem;
+    margin-left: 15px;
 }
 
 
-
-/* the extra text that is above the endpage & footer, unanimous across sites */
-.extra-text {
-    width: 95%;
-    margin: 0 auto;
-    border-top: 2px solid black;
-    font-family: cursive;
-    color: white;
-}
-.extra-text h1, .extra-text p {
-    padding-left: 100px;
-}
-.extra-text h1 {
-    margin: 0;
-}
-.extra-text h1:first-child {
-    margin-top: 20px;
-}
-
-
-
-
-/* endpage = right above the footer, stuffy stuff */
-.endpage {
+.navbar-stuff {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 70px;
-    flex: 1;
+    flex-wrap: wrap;
+    align-content: center;
 }
-.spacer { /* adds space to centralize w/o needing to use position to alter backtop & grid */
-    width: 150px;
-}
-.endpage-grid {
-    display: grid;
-    column-gap: 80px;
-    row-gap: 0;
-    grid-template-columns: auto auto auto auto;
-    margin: 0 auto;
-    justify-content: center;
-    flex: 4;
-}
-.grid-item {
-    font-size: 10px;
-    text-align: center;
-    max-height: 35px;
-}
-.grid-item a {
-    text-decoration: none;
-    color: blue;
-}
-.grid-item:hover {
-    box-shadow: 1px 1px 5px black;
-}
-.grid-item a {
-    color: blue;
-    text-decoration: none;
-}
-
-/* back to top button next to the grid above the footer, unanimous across sites */
-.endpage a, .back-to-top-wrapper a, .back-to-top-text {
-    text-decoration: none;
-    color: blue;
-}
-.back-to-top-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 0.45;
-    width: auto;
-}
-.back-to-top {  
-    border: 1px solid blue;
-    border-radius: 50%;
-    transition: 0.3s ease-out;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-}
-.back-to-top span {
-    font-size: 30px;
-    transition: 0.3s ease-out;
-}
-.back-to-top-text {
-    font-size: 13px;
-    transition: 0.3s ease-out;
-}
-.back-to-top-wrapper:hover .back-to-top span {
-    transform: translateY(-4px);
-    color: rgb(0, 0, 120);
-    border-color: rgb(0, 0, 120);
-}
-.back-to-top:hover {
-    border-color: rgb(0, 0, 120);
-}
-
-
-
-
-
-
-/* footer at the very bottom , unanimous across sites */
-footer {
-    background-color: rgb(202, 201, 201);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: auto;
-    text-align: center;
-    position: relative;
-    padding: 15px;
-}
-footer p, footer ul {
-    margin: 0;
-}
-/* background-color: rgba(255, 255, 255, 0,05);
-    backdrop-filter: blur(10px);
-    
-    .button:not(:first-child)
-    .button:has(thing)*/ 
-
-
-@media (max-width: 800px) {
-    .endpage {
-        height: 100px;
-    }
-    .spacer {
-        display: none;
-    }
-    .back-to-top-wrapper {
-        margin-right: 20px;
-    }
-    main {
-        flex-direction: column;
-        align-items: center;
-    }
-    .theme-switch {
-        position: static;
-    }
-    .dejan-article-searchbox {
-        flex-direction: column;
-        width: 30%;
-        align-items: center;
-    }
-    .dejan-article {
-        font-size: 24px;
-        word-wrap: break;
-        text-align: center;
-    }
-    .dejan-article p {
-        width: 100%;
-        padding: 10px;
-    }
-    .index-article-searchbox {
-        flex-direction: column;
-        width: auto;
-    }
-    .searchbox {
-        margin-left: 75px;
-    }
-
-}
-@media (max-width: 665px) {
-    .extra-text h1, .extra-text p {
-        padding-left: 0;
-    }
-    .endpage {
-        height: 135px;
-    }
-    .spacer {
-        flex: 0.1;
-    }
-    .endpage-grid {
-        grid-template-columns: auto auto auto;
-    }
-    .back-to-top-wrapper {
-        position: static;
-        flex: 0.5;
-    }
-    footer {
-        padding: 0;
-        height: 100px;
-        flex-direction: column;
-    }
-    footer ul {
-        position: static;
-        margin-top: 5px;
-    }
-    .dejan-article img {
-        width: 150px;
-        height: auto;
-        margin-right: 10px;
-    }
-    .dejan-article {
-        width: 90%;
-        margin: 10px;
-        font-size: 14px;
-    }
-    .dejan-article p {
-        width: 100% !important;
-        padding: 5px;
-        font-size: 12px;
-    }
-
-}
-
-
-
-
-
-/* PAGE DEJAN.HTML */
-.dejan-article {
-    background-color: rgba(255, 255, 255, 0.05); 
-    backdrop-filter: blur(10px);
-    border: 1px solid black;
-    margin: 15px 0px;
-    color: var(--text-color)
-}
-.dejan-article p {
-    white-space: pre-wrap;
-    width: 600px;
-    height: auto;
-    line-height: 1.6;
-    border-radius: 5px;
-    padding: 0;
-    margin: 0;
-}
-.dejan-article img {
+.navbar-stuff ul li {
+    list-style-type: none;
     float: left;
-    margin-right: 15px;
-    margin-top: 20px;
-    width: 200px;
-    height: auto;
+    margin: 5px;
+    font-size: 1.8rem;
 }
-.dejan-image-text-article {
+.navbar-stuff ul li:nth-child(1) {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.navbar-stuff ul li:nth-child(2) {
+    border-right: 1px solid black;
+    padding-right: 15px;
+}
+
+.playlist-spotify {
+    text-align: center;
+    width: 500px;
+    font-size: 30px;
+    transition: 750ms ease;
+    display: grid;
+    grid-template-rows: 1.5em 0fr;
+    position: absolute;
+    right: 50px;
+    top: 33%;
+    z-index: 2;
+}
+.playlist-spotify p:nth-child(1) {
+    margin: 0;
+    font-size: .75em;
+}
+.playlist-spotify:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.hidden-spotify-div {
+    display: none;
     overflow: hidden;
 }
-
-
-.dejan-article-searchbox {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    gap: 20px;
+.open {
+    grid-template-rows: 1.5em 1fr;
+    background-color: rgba(50, 50, 50, 0.3);
+}
+.playlist-spotify.open .hidden-spotify-div {
+    display: block;
+}
+nav iframe {
+    width: 80%; 
+    height: 152px; 
+    transition: transform 750ms; 
 }
 
-.about-author {
+/* endregion */
+
+
+/* === Region Main === */
+main {
+    width: 100%;             
+    margin: 0 auto;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+}
+.main-projects {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    justify-content: center;
-    margin: 20px auto;
-    margin-left: 6%;
-    
 }
-.author-pic-links {
-    background-color: gray;
-    width: 475px;
-    display: flex;
-    flex-direction: row;
-    border: 2px solid black;
-    border-bottom: 0;
+.projects-div {
+    width: min(1000px, 100%);
+    padding: 20px;   
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    margin: 0 auto;
+    columns: 3 300px;
+    column-gap: 1em;
+    line-height: 2em;
+    display: block;
+    margin-bottom: 1em;
+    text-align: center;
+
 }
-.author-pic-links a {
-    padding: 1px;
+.projects-div img {
+    width: 300px;
+    overflow: clip;
 }
-.author-pic-links a:nth-child(-n+2) {
-    border-right: 1px solid black;
-    padding-right: 5px;
-}
-.author-links-div {
-    padding-left: 90px;
-    align-self: center;
-}
-.about-author img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 5px;
-}
-.author-lorem {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    width: 475px;
-    border: 2px solid black;
-}
-.author-lorem p {
-    margin-top: 25px;
-    margin-right: 25px;
-}
+/* endregion */
