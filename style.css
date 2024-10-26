@@ -1,14 +1,20 @@
 /* === Region body === */
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     padding: 0;
+    padding-top: 10vh;
+    width: 100%;
+    height: 100%;
     background-image: url("/indexPictures/background3.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    scroll-behavior: smooth;
-} /* endregion */
+} 
+/* endregion */
 
 
 
@@ -17,10 +23,12 @@ body {
 nav {
     width: 100vw;
     height: 10vh;
-    position: fixed;
     display: flex;
-    background-color: white;
+    background-color: rgb(233, 233, 233);
     padding: 20px;
+    z-index: 10;    
+    position: fixed;
+    top: 0;
 }
 nav h1 {
     margin: 0;
@@ -101,14 +109,21 @@ nav iframe {
 
 /* endregion */
 
+#clock {
+    font-size: 2em;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    position: fixed;
+    top: 15%;
+    left: 4%;
+}
 
 /* === Region Main === */
 main {
     width: 100%;             
     margin: 0 auto;
-    position: absolute;
     z-index: -1;
-    top: 50%;
+    margin-top: 10vh;
 }
 .main-projects {
     display: flex;
@@ -133,4 +148,30 @@ main {
     width: 300px;
     overflow: clip;
 }
+/* endregion */
+
+
+/* === Region Footer === */
+
+footer {
+    width: 100vw;
+    height: 8vh;   
+    background-color: rgb(233, 233, 233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.social-media {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 5%;
+}
+#back-to-top {
+    margin-left: 15px;
+}
+
+
+
 /* endregion */
