@@ -1,4 +1,4 @@
-function updateClock() {
+/* function updateClock() {
     const now = new Date();
 
     let hours = now.getHours();
@@ -14,3 +14,4 @@ function updateClock() {
 
   setInterval(updateClock, 1000);
   updateClock();
+  */
