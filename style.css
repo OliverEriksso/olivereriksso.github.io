@@ -131,7 +131,7 @@ main {
     justify-content: center;
     flex-direction: column;
 }
-.projects-div {
+.all-projects-div {
     width: min(1000px, 100%);
     padding: 20px;   
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
@@ -144,10 +144,34 @@ main {
     text-align: center;
 
 }
-.projects-div img {
+.all-projects-div img {
     width: 300px;
     overflow: clip;
 }
+.projects-div {
+    position: relative; 
+}
+.projects-div img {
+    transition: opacity 0.3s ease; 
+}
+.projects-hidden-text {
+    color: white;
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+.projects-div:hover img {
+    opacity: 0.9; 
+}
+.projects-div:hover .projects-hidden-text {
+    opacity: 1; 
+}
+
 /* endregion */
 
 
