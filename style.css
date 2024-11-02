@@ -109,18 +109,11 @@ nav iframe {
 
 /* endregion */
 
-#clock {
-    font-size: 2em;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    position: fixed;
-    top: 15%;
-    left: 4%;
-}
 
 /* === Region Main === */
 main {
-    width: 100%;             
+    width: 100%;     
+    min-height: calc(100vh - 70px);        
     margin: 0 auto;
     z-index: -1;
     margin-top: 10vh;

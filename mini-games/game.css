@@ -1,0 +1,45 @@
+#games-container {
+    background-color: gray;
+    height: 800px;
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+.game {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.game-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.game-content {
+    background: darkgray;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+#closeButton {
+    margin-top: 20px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+}
+
+
+/* ROCK PAPER SCISSORS PART */
+.rock-paper-scissor-image {
+    width: 200px;
+    height: 200px;
+}
