@@ -28,6 +28,10 @@
     background: darkgray;
     padding: 20px;
     border-radius: 10px;
+    height: 400px;
+    width: 600px;
+    text-align: center;
+    line-height: 40px;
     position: relative;
 }
 #closeButton {
@@ -42,4 +46,17 @@
 .rock-paper-scissor-image {
     width: 200px;
     height: 200px;
+    cursor: pointer;
+}
+
+.shake-animation {
+    animation: shake 1s ease;
+}
+
+@keyframes shake {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-5px); }
+    50% { transform: translateY(5px); }
+    75% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
 }
