@@ -11,6 +11,7 @@ export function initializeRockPaperScissors() {
     updateScore(totalScore);
     createBoard(roundWinner, totalScore);
 }
+
 function createElement(text) {
     const scoreElement = document.createElement("div"); 
     scoreElement.id = text; 
@@ -77,7 +78,7 @@ function createBoard() {
 
 function createImageElement(imageSrc, altText) {
     const img = document.createElement('img'); 
-    img.src = imageSrc; 
+    img.src = `./rock-paper-scissors/${imageSrc}`; 
     img.alt = altText; 
     img.className = 'rock-paper-scissor-image'; 
     return img; 

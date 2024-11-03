@@ -14,7 +14,7 @@
 }
 .game-overlay {
     position: fixed;
-    top: 0;
+    top: 10vh;
     left: 0;
     right: 0;
     bottom: 0;
@@ -28,8 +28,8 @@
     background: darkgray;
     padding: 20px;
     border-radius: 10px;
-    height: 400px;
-    width: 600px;
+    min-height: 400px;
+    min-width: 600px;
     text-align: center;
     line-height: 40px;
     position: relative;
@@ -60,3 +60,18 @@
     75% { transform: translateY(-5px); }
     100% { transform: translateY(0); }
 }
+
+
+/* ETCH A SKETCH PART */
+.etch-container {
+    display: grid;
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    position: relative;
+    left: 50px;
+  }
+  .etch-cell {
+    border: 1px solid lightgray;
+    background-color: white;
+  }

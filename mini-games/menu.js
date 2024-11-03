@@ -1,6 +1,6 @@
-import { initializeRockPaperScissors } from './ro-pa-sci.js';
+import { initializeRockPaperScissors } from './rock-paper-scissors/ro-pa-sci.js';
+import { initializeEtchASketch } from './etch-a-sketch/etchASketch.js';
 // import { initializeTicTacToe } from './ticTacToe.js';
-// import { initializeEtchASketch } from './etchASketch.js';
 // import { initializeWordle } from './wordle.js';
 
 const gameContent = document.getElementById("gameContent");
@@ -14,14 +14,14 @@ const gameContentData = {
     game1: {
         title: "Rock Paper Scissors",
         description: "Play Rock Paper Scissors versus the computer!",
-        script: "ro-pa-sci.js", 
+        script: "./rock-paper-scissors/ro-pa-sci.js", 
         renderFunction: initializeRockPaperScissors
     },
     game2: {
         title: "Etch-a-Sketch",
         description: "Play Etch-a-Sketch!",
-        script: "", //"etchASketch.js" 
-        renderFunction: null 
+        script: "./etch-a-sketch/etchASketch.js", 
+        renderFunction: initializeEtchASketch
     },
     game3: {
         title: "Game 3",
