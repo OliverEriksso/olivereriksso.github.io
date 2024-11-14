@@ -1,6 +1,6 @@
 import { initializeRockPaperScissors } from './rock-paper-scissors/ro-pa-sci.js';
 import { initializeEtchASketch } from './etch-a-sketch/etchASketch.js';
-// import { initializeTicTacToe } from './ticTacToe.js';
+import { initializeTicTacToe } from './tic-tac-toe/ticTacToe.js';
 // import { initializeWordle } from './wordle.js';
 
 const gameContent = document.getElementById("gameContent");
@@ -24,10 +24,10 @@ const gameContentData = {
         renderFunction: initializeEtchASketch
     },
     game3: {
-        title: "Game 3",
-        description: "This is a brief description of Game 3.",
-        script: "", 
-        renderFunction: null
+        title: "Tic Tac Toe",
+        description: "Play some Tic Tac Toe!",
+        script: "./tic-tac-toe/ticTacToe.js", 
+        renderFunction: initializeTicTacToe
     },
     game4: {
         title: "Game 4",
@@ -76,8 +76,8 @@ games.forEach(game => {
     })
 })
 
-closeButton.addEventListener('click', function() {
-    overlay.style.display = 'none'; 
+function closeGamePopup() {
+    overlay.style.display = "none"; 
 
     while (gameContent.firstChild) {
         gameContent.removeChild(gameContent.firstChild); 
@@ -91,7 +91,16 @@ closeButton.addEventListener('click', function() {
     });
 
     loadedScripts.clear();
+}
+
+closeButton.addEventListener("click", function() {
+    closeGamePopup();
 });
 
+overlay.addEventListener("click", function(event) {
+    if (!gameContent.contains(event.target)) {
+        closeGamePopup();
+    }
+})
 
 
