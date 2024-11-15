@@ -6,12 +6,21 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
     gap: 10px;
+    justify-content: center;
+    padding: 20px;
 }
 .game {
     width: 100%;
     height: 100%;
     cursor: pointer;
+    object-fit: contain;
+    border-radius: 10px; 
+    transition: transform 0.3s ease;
 }
+.game:hover {
+    transform: scale(1.05); 
+}
+
 .game-overlay {
     position: fixed;
     top: 0;
