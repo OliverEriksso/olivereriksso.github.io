@@ -110,3 +110,26 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+/* wordle PAT */
+#wordle-board {
+    height: auto;
+    width: auto;
+}
+
+.wordle-row {
+    margin: 5px;
+}
+
+.wordle-cell {
+    background-color: darkgray;
+    color: blue;
+    margin: 4px;
+    height: 50px; 
+    width: 50px;
+    font-size: 3rem;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 50px;
+    padding: 0;
+}   

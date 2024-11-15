@@ -1,7 +1,7 @@
 import { initializeRockPaperScissors } from './rock-paper-scissors/ro-pa-sci.js';
 import { initializeEtchASketch } from './etch-a-sketch/etchASketch.js';
 import { initializeTicTacToe } from './tic-tac-toe/ticTacToe.js';
-// import { initializeWordle } from './wordle.js';
+import { initializeWordle } from './wordle/wordle.js';
 
 const gameContent = document.getElementById("gameContent");
 const closeButton = document.getElementById("closeButton");
@@ -30,10 +30,10 @@ const gameContentData = {
         renderFunction: initializeTicTacToe
     },
     game4: {
-        title: "Game 4",
-        description: "This is a brief description of Game 4.",
-        script: "", 
-        renderFunction: null
+        title: "Wordle",
+        description: "Play Wordle infinitely!",
+        script: "./wordle/wordle.js", 
+        renderFunction: initializeWordle
     },
 };
 
